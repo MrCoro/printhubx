@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import FloatingLabel from './loginform.js';
 //import {Login} from './login';
-//Platform, 
+//Platform, , Text, View
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -12,15 +13,16 @@ import {StyleSheet, Text, View} from 'react-native';
 
 export default class App extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Print HUB</Text>
-      </View>
+    return (  
+      <FloatingLabel/>   
     );
   }
 }
-//
-//<Login />
+
+/* <View style={styles.container}>
+        <Text style={styles.welcome}>Print HUB</Text>
+      </View> */
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
