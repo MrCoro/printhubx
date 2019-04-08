@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import Login from './login';
+import {StyleSheet, Text, View} from 'react-native';
+//import {Login} from './login';
+//Platform, 
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -13,13 +14,13 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Kontollu</Text>
-        <Login />
+        <Text style={styles.welcome}>Print HUB</Text>
       </View>
     );
   }
 }
-
+//
+//<Login />
 const styles = StyleSheet.create({
   container: {
     flex: 1,
