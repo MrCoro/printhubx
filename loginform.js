@@ -1,25 +1,54 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
+import { StyleSheet } from 'react-native';
+import { Container, Header, Content, Text, Form, Item, Input, Label, Button } from 'native-base';
 
 export default class FloatingLabel extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      userEmail:'',
+      userPassword:''
+    }
+  }
+
+  // userRegister=()=>{
+  //   const {userEmail} = this.state;
+  //   const {userPassword} = this.state;
+  // }
+  
   render() {
     return (
-      <Container>
-        <Header />
+        <Container>
+        <Header style={styles.header}/>
         <Content>
           <Form>
             <Item floatingLabel>
-              <Label>Username</Label>
-              <Input />
+              <Label>Email</Label>
+              <Input  onChangeText={userEmail => this.setState({userEmail})}/>
             </Item>
             <Item floatingLabel last>
               <Label>Password</Label>
-              <Input />
+              <Input  onChangeText={userEmail => this.setState({userEmail})}/>
             </Item>
-          </Form>
+            <Item style={styles.buttons}>
+            <Button transparent warning><Text>SIGN IN</Text></Button>
+            <Button transparent warning><Text>DAFTAR</Text></Button>
+            </Item>
+        </Form>
         </Content>
       </Container>
     );
   }
 }
 
+const styles = StyleSheet.create({
+  header: {
+    fontSize: 20,
+    textAlign: 'center',
+    backgroundColor: '#F4D03F'
+  }, buttons: {
+    margin: 10,
+    alignContent: 'center'
+  }
+  
+});

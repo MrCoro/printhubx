@@ -14,7 +14,7 @@ import FloatingLabel from './loginform.js';
 export default class App extends Component {
   render() {
     return (  
-      <FloatingLabel/>   
+      <FloatingLabel />   
     );
   }
 }
@@ -24,12 +24,6 @@ export default class App extends Component {
       </View> */
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
