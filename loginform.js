@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
-import { Container, Header, Content, Text, Form, Item, Input, Label, Button } from 'native-base';
+import { Container, Header, Content, Text, Form, Item, Input, Label, Button, Left, Body, Right, Title } from 'native-base';
 
 export default class FloatingLabel extends Component {
   constructor(props){
@@ -11,6 +11,7 @@ export default class FloatingLabel extends Component {
     }
   }
 
+
   // userRegister=()=>{
   //   const {userEmail} = this.state;
   //   const {userPassword} = this.state;
@@ -19,7 +20,13 @@ export default class FloatingLabel extends Component {
   render() {
     return (
         <Container>
-        <Header style={styles.header}/>
+        <Header style={styles.header}>
+          <Left/>
+          <Body>
+            <Title>PrintHub</Title>
+          </Body>
+          <Right />
+        </Header>
         <Content>
           <Form>
             <Item floatingLabel>
@@ -46,6 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     backgroundColor: '#F4D03F'
+
   }, buttons: {
     margin: 10,
     alignContent: 'center'
