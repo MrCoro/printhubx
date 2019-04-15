@@ -30,14 +30,14 @@ export default class FloatingLabel extends Component {
     });
   }
 
-  // onSignUpPress(){
-  //   const { userEmail, userPassword } = this.state;
+  onSignUpPress(){
+    const { userEmail, userPassword } = this.state;
     
-  //   this.setState({error: '', loading: true});
+    this.setState({error: '', loading: true});
 
-  //   firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
-  //       .then(this.onLoginSuccess.bind(this));
-  // }
+    firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+        .then(this.onLoginSuccess.bind(this));
+  }
 
   onLoginSuccess(){
       this.setState({
