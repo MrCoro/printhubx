@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import firebase from 'firebase';
-import { Button, View} from 'native-base';
+import { Button, View, Container} from 'native-base';
 import FloatingLabel from './loginform.js';
 import { Spinner } from './components/spinner.js';
 
@@ -26,9 +26,9 @@ export default class App extends Component {
   
     firebase.auth().onAuthStateChanged((user) => {
         if(user){
-          this.setState({loggedIn: true});
+          this.setState({loggedIn: true}); //true
         } else {
-          this.setState({loggedIn: false});
+          this.setState({loggedIn: false}); 
         }
       }
     );
@@ -37,12 +37,13 @@ export default class App extends Component {
   renderContent(){
     switch (this.state.loggedIn){
       case true:
-        return(
-          <Button onPress={() => {firebase.auth.signOut()}}>
-          LogOut
+        return( 
+          <Button onPress={() => {firebase.auth().signOut()}} > 
+          <Text>LogOut</Text>
           </Button> 
         );
-      case false:
+      
+        case false:
         return <FloatingLabel />;
       default:
         return <View><Spinner /></View>;
@@ -51,15 +52,15 @@ export default class App extends Component {
 
   render() {
     return (  
-    <View>
-      {this.renderContent()}  
-    </View>
+      <Container>
+        {this.renderContent()}  
+      </Container>
     );
   }
 }
 
 //<FloatingLabel />   
-//{this.renderContent()}
+
 const styles = StyleSheet.create(
   {
   welcome: 
