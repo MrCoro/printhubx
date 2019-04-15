@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { StyleSheet } from 'react-native';
 import firebase from 'firebase';
+import { Button, View} from 'native-base';
 import FloatingLabel from './loginform.js';
-import { Button, Container, View } from 'native-base';
 import { Spinner } from './components/spinner.js';
 
 //import {Login} from './login';
-//Platform, Text, View
+//Platform,  Container, Text
 
 export default class App extends Component {
   state = {
@@ -51,14 +51,15 @@ export default class App extends Component {
 
   render() {
     return (  
-      <Container>
-      {/* <FloatingLabel />    */}
-      {this.renderContent()}
-      </Container>
+    <View>
+      {this.renderContent()}  
+    </View>
     );
   }
 }
 
+//<FloatingLabel />   
+//{this.renderContent()}
 const styles = StyleSheet.create(
   {
   welcome: 
