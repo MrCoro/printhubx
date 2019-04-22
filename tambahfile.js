@@ -15,12 +15,12 @@ export default class ContentExample extends Component {
           <Right />
         </Header>
 
-		<Content>
+		<Content style={styles.contentPos}>
           <Button style={styles.addFile}>
             <Text>Tambahkan File</Text>
           </Button>
         </Content>
-		<Content>
+		<Content style={styles.contentPos}>
 		 <Button style={styles.lanjut}>
             <Text>Lanjut</Text>
           </Button>
@@ -37,6 +37,9 @@ const styles = StyleSheet.create({
 	fontSize: 20,
     textAlign: 'center',
     backgroundColor: '#fea048'
+	},
+	contentPos:	{
+	bottom: -120
 	},
   addFile:	{
 	
