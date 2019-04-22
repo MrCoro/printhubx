@@ -26,10 +26,13 @@ export default class PickerEx extends Component {
           <Body>
             <Title>PrintHub</Title>
           </Body>
-          <Right />
+          <Right>
+            <Button transparent>
+              <Icon name='menu' />
+            </Button>
         </Header>
 		<Text>Metode Print:</Text>
-		<Content padder>
+		<Content>
           <Accordion dataArray={dataArray} expanded={0}/>
         </Content>
         <Content>
