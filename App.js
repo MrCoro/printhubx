@@ -4,6 +4,9 @@ import firebase from 'firebase';
 import { Button, View, Container} from 'native-base';
 import FloatingLabel from './loginform.js';
 import { Spinner } from './components/spinner.js';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
 
 //import {Login} from './login';
 //Platform,  Container, Text
@@ -50,11 +53,13 @@ export default class App extends Component {
     }     
   }
 
-  render() {
-    return (  
+render() {
+  return ( 
+    <Provider store={createStore()}>
       <Container>
         {this.renderContent()}  
       </Container>
+    </Provider>
     );
   }
 }
@@ -86,6 +91,3 @@ const styles = StyleSheet.create(
 //     'Shake or press menu button for dev menu',
 // });
 
-/* <View style={styles.container}>
-        <Text style={styles.welcome}>Print HUB</Text>
-      </View> */
