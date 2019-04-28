@@ -7,13 +7,13 @@ const dataArray = [
   { title: "Laserjet Printing", content: "Pencetak laser atau printer laser adalah pencetak untuk komputer yang menggunakan teknologi diode cahaya untuk mendapatkan partikel-partikel kecil toner dari cartridge ke kertas. Laserjet lebih ekonomis dibanding pencetak tinta." }
 ];
 
-export default class PickerEx extends Component {
-  
-  onValueChange(value: string) {
+export default class PickerEx extends Component {  
+  onValueChange(value) {
     this.setState({
       selected: value
     });
   }
+
   render() {
     return (
       <Container>

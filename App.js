@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import { Button, View, Container} from 'native-base';
 import FloatingLabel from './loginform.js';
 import { Spinner } from './components/spinner.js';
+import Router from './router';
 
 //import {Login} from './login';
 //Platform,  Container, Text
