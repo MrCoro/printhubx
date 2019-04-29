@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import { StyleSheet } from 'react-native';
-//import firebase from 'firebase';
-//import PickerEx from './printmethod.js';
-//import FloatingLabel from './loginform.js';
-import ItemSpecs from './itemdetails.js';
+import { StyleSheet, Text } from 'react-native';
+import firebase from 'firebase';
+import { Button, View, Container} from 'native-base';
+import FloatingLabel from './loginform.js';
+import { Spinner } from './components/spinner.js';
 
 //import {Login} from './login';
-//Platform, Text, View
+//Platform,  Container, Text
 
 export default class App extends Component {
   /*componentWillMount(){
@@ -18,17 +18,44 @@ export default class App extends Component {
     storageBucket: 'printhub-d86b6.appspot.com',
     messagingSenderId: '393316642136'
     });
-  }*/
+    
+  
+    firebase.auth().onAuthStateChanged((user) => {
+        if(user){
+          this.setState({loggedIn: true}); //true
+        } else {
+          this.setState({loggedIn: false}); 
+        }
+      }
+    );
+  }
+
+  renderContent(){
+    switch (this.state.loggedIn){
+      case true:
+        return( 
+          <Button onPress={() => {firebase.auth().signOut()}} > 
+          <Text>LogOut</Text>
+          </Button> 
+        );
+      
+        case false:
+        return <FloatingLabel />;
+      default:
+        return <View><Spinner /></View>;
+    }     
+  }
 
   render() {
     return (  
-      //<FloatingLabel />
-	  //<PickerEx />
-	  <ItemSpecs />
-      );
+      <Container>
+        {this.renderContent()}  
+      </Container>
+    );
   }
 }
 
+//<FloatingLabel />   
 
 const styles = StyleSheet.create(
   {
