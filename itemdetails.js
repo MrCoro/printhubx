@@ -24,19 +24,19 @@ export default class ItemSpecs extends Component {
     return (
 	<Container>
 			<Header style={styles.header}>
-			  <Left>
-			  <Button transparent>
+			<Left>
+				<Button transparent>
 				  <Icon name='arrow-back' />
 				</Button>
-				</Left>
+			</Left>
 			  <Body>
 				<Title>PrintHub</Title>
 			  </Body>
-			  <Right>
+			<Right>
 				<Button transparent>
 				  <Icon name='menu' />
 				</Button>
-				</Right>
+			</Right>
 			</Header>
 			  <Text style={styles.text}> Spesifikasi </Text>
 		<Content>
