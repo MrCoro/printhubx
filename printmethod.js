@@ -18,18 +18,22 @@ export default class PickerEx extends Component {
     return (
       <Container>
         <Header style={styles.header}>
-          <Left>
-		  <Button transparent>
-              <Icon name='arrow-back' />
-            </Button>
+			<Left>
+			  <Button transparent>
+				  <Icon name='arrow-back' />
+				</Button>
 			</Left>
-          <Body>
-            <Title>PrintHub</Title>
-          </Body>
-          <Right />
-        </Header>
+			  <Body>
+				<Title>PrintHub</Title>
+			  </Body>
+			  <Right>
+				<Button transparent>
+				  <Icon name='menu' />
+				</Button>
+			</Right>
+		</Header>
 		<Text>Metode Print:</Text>
-		<Content padder>
+		<Content>
           <Accordion dataArray={dataArray} expanded={0}/>
         </Content>
         <Content>
