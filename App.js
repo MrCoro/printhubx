@@ -9,12 +9,7 @@ import { Spinner } from './components/spinner.js';
 //Platform,  Container, Text
 
 export default class App extends Component {
-  state = {
-    loggedIn: null
-  };
-
-
-  componentWillMount(){
+  /*componentWillMount(){
     firebase.initializeApp({
     apiKey: 'AIzaSyACNfpCprNjrP1CdrKR4UJ7Gt9kqjkRgAI',
     authDomain: 'printhub-d86b6.firebaseapp.com',
@@ -23,6 +18,7 @@ export default class App extends Component {
     storageBucket: 'printhub-d86b6.appspot.com',
     messagingSenderId: '393316642136'
     });
+    
   
     firebase.auth().onAuthStateChanged((user) => {
         if(user){
@@ -73,12 +69,9 @@ const styles = StyleSheet.create(
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  }, 
-  loadingUser: {
-    alignContent: 'center',
-    paddingTop: 40
-  }
+  },
 });
+
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
 //   android:
