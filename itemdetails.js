@@ -53,8 +53,9 @@ export default class ItemSpecs extends Component {
 							selectedValue={this.state.selected}
 							onValueChange={this.onValueChange.bind(this)}
 							>
-								<Picker.Item label="Berwarna" value="key0" />
-								<Picker.Item label="Hitam Putih" value="key1" />
+								<Picker.Item label="(Pilih)" value="key0" />
+								<Picker.Item label="Berwarna" value="key1" />
+								<Picker.Item label="Hitam Putih" value="key2" />
 						</Picker>
 					</Form>
 				</Right>
@@ -74,11 +75,12 @@ export default class ItemSpecs extends Component {
 							selectedValue={this.state.selected}
 							onValueChange={this.onValueChange.bind(this)}
 							>
-								<Picker.Item label="Kertas HVS" value="key0" />
-								<Picker.Item label="Kertas Foto" value="key1" />
-								<Picker.Item label="Art Carton" value="key2" />
-								<Picker.Item label="Art Paper" value="key3" />
-								<Picker.Item label="Brief Card" value="key4" />
+								<Picker.Item label="(Pilih)" value="key0" />
+								<Picker.Item label="Kertas HVS" value="key1" />
+								<Picker.Item label="Kertas Foto" value="key2" />
+								<Picker.Item label="Art Carton" value="key3" />
+								<Picker.Item label="Art Paper" value="key4" />
+								<Picker.Item label="Brief Card" value="key5" />
 						</Picker>
 					</Form>
 				</Right>
@@ -98,6 +100,7 @@ export default class ItemSpecs extends Component {
 							selectedValue={this.state.selected}
 							onValueChange={this.onValueChange.bind(this)}
 							>
+								<Picker.Item label="(Pilih)" value="key0" />
 								<Picker.Item label="A5" value="size0" />
 								<Picker.Item label="B5" value="size1" />
 								<Picker.Item label="A4" value="size2" />
@@ -133,17 +136,16 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     textAlign: 'center',
-    backgroundColor: '#F4D03F'
-
+    backgroundColor: '#fea048'
   }, text: {
     fontSize: 35,
     textAlign: 'center',
-    color: '#F4D03F'
+    color: '#fea048'
   }, buttons: {
     margin: 10,
 	flexDirection: "row", 
 	justifyContent: "center",
-	 backgroundColor: '#F4D03F',
+	 backgroundColor: '#fea048',
 	width : 150
   }, picker: {
 	margin : 25,

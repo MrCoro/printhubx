@@ -32,13 +32,18 @@ export default class PickerEx extends Component {
 				</Button>
 			</Right>
 		</Header>
-		<Text>Metode Print:</Text>
+		<Text style={styles.method}>Metode Print:</Text>
 		<Content>
-          <Accordion dataArray={dataArray} expanded={0}/>
+          <Accordion 
+			dataArray={dataArray} 
+			expanded={0}
+			headerStyle={{ backgroundColor: "#fea048" }}
+            contentStyle={{ backgroundColor: "#ffdbc5" }}
+		  />
         </Content>
         <Content>
           <Form>
-		  <Text>Pilih Metode Print</Text>
+		  <Text style={styles.pickMethod}>Pilih Metode Print</Text>
 			<Item >
 			<Button  rounded light style={styles.buttons}>
             <Text style={{color:"#FFFFFF"}}>Inkjet</Text>
@@ -59,17 +64,22 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     textAlign: 'center',
-    backgroundColor: '#F4D03F'
+    backgroundColor: '#fea048'
 
   }, buttons: {
     margin: 10,
 	flexDirection: "row", 
 	justifyContent: "center",
-	 backgroundColor: '#F4D03F',
+	 backgroundColor: '#fea048',
 	width : 150
   }, error: {
       fontSize: 20,
       alignSelf: 'center',
       color: 'red'
-  } 
+  }, method: {
+	  fontSize: 20
+  }, pickMethod: {
+	  fontSize: 20,
+	  alignSelf: 'center'
+  }
 });

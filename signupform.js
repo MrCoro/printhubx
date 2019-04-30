@@ -68,17 +68,16 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     textAlign: 'center',
-    backgroundColor: '#F4D03F'
+    backgroundColor: '#fea048'
 
   }, text: {
     fontSize: 35,
     textAlign: 'center',
-    color: '#F4D03F'
+    color: '#fea048'
   }, buttons: {
-    margin: 10,
-	flexDirection: "row", 
+	alignSelf: 'center',
 	justifyContent: "center",
-	 backgroundColor: '#F4D03F',
+	 backgroundColor: '#fea048',
 	width : 150
   }, error: {
       fontSize: 20,
