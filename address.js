@@ -53,7 +53,7 @@ export default class Loc extends Component {
 					</Right>
 				</ListItem>
         </Content>
-		<Content style={styles.contentPos}>
+		<Content>
 				<Form>
 						<Button block style={styles.buttons}>
 							<Text>Tambah Alamat Pengiriman</Text>
@@ -95,7 +95,5 @@ const styles = StyleSheet.create({
       fontSize: 20,
       alignSelf: 'center',
       color: 'red'
-  }, contentPos: {
-  
-	}
+  } 
 });
