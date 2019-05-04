@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Container, Header, Text, Form, Item, Input, Label, Button, Left, Body, Right, Title, Card, View } from 'native-base';
 import firebase from 'firebase';
 import { Spinner } from './components/spinner';
+// unused component    
 
 export default class FloatingLabel extends Component {
   constructor(props){
@@ -15,7 +16,7 @@ export default class FloatingLabel extends Component {
     }
   }
 
-  onSignInPress(){
+  onButtonPress(){
     const { userEmail, userPassword } = this.state; 
 
     this.setState({error: '', loading: true});
@@ -35,8 +36,7 @@ export default class FloatingLabel extends Component {
     this.setState({error: '', loading: true});
 
     firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
-        .then(this.onLoginSuccess.bind(this))
-          .catch(this.onLoginFailed.bind(this));
+        .then(this.onLoginSuccess.bind(this));
   }
 
   onLoginSuccess(){
@@ -52,7 +52,7 @@ export default class FloatingLabel extends Component {
     this.setState({
       userEmail: '',
       userPassword: '',
-      error: 'autentication error, something went wrong!',
+      error: 'autentication error, something went wrong',
       loading: false
     });
   }
@@ -61,10 +61,13 @@ export default class FloatingLabel extends Component {
     if(this.state.loading){
       return <Spinner />;
     } 
+
     return(
       <View><Text>Test Printhub Beta v0.11</Text></View>
     );
   }
+
+
   render() {
     return (
         <Container>
@@ -86,7 +89,7 @@ export default class FloatingLabel extends Component {
               <Input  secureTextEntry={true} onChangeText={userPassword => this.setState({userPassword})}/>
             </Item>
             <Item style={styles.buttons}>
-            <Button transparent warning onPress={this.onSignInPress.bind(this)}><Text>SIGN IN</Text></Button>
+            <Button transparent warning onPress={this.onButtonPress.bind(this)}><Text>SIGN IN</Text></Button>
             <Button transparent warning><Text>DAFTAR</Text></Button>            
             </Item>
         </Form>
@@ -113,3 +116,5 @@ const styles = StyleSheet.create({
     color: 'red'
   } 
 });
+
+//

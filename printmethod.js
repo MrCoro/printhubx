@@ -7,43 +7,34 @@ const dataArray = [
   { title: "Laserjet Printing", content: "Pencetak laser atau printer laser adalah pencetak untuk komputer yang menggunakan teknologi diode cahaya untuk mendapatkan partikel-partikel kecil toner dari cartridge ke kertas. Laserjet lebih ekonomis dibanding pencetak tinta." }
 ];
 
-export default class PickerEx extends Component {
-  
-  onValueChange(value: string) {
+export default class PickerEx extends Component {  
+  onValueChange(value) {
     this.setState({
       selected: value
     });
   }
+
   render() {
     return (
       <Container>
         <Header style={styles.header}>
-			<Left>
-			  <Button transparent>
-				  <Icon name='arrow-back' />
-				</Button>
+          <Left>
+		  <Button transparent>
+              <Icon name='arrow-back' />
+            </Button>
 			</Left>
-			  <Body>
-				<Title>PrintHub</Title>
-			  </Body>
-			  <Right>
-				<Button transparent>
-				  <Icon name='menu' />
-				</Button>
-			</Right>
-		</Header>
-		<Text style={styles.method}>Metode Print:</Text>
-		<Content>
-          <Accordion 
-			dataArray={dataArray} 
-			expanded={0}
-			headerStyle={{ backgroundColor: "#fea048" }}
-            contentStyle={{ backgroundColor: "#ffdbc5" }}
-		  />
+          <Body>
+            <Title>PrintHub</Title>
+          </Body>
+          <Right />
+        </Header>
+		<Text>Metode Print:</Text>
+		<Content padder>
+          <Accordion dataArray={dataArray} expanded={0}/>
         </Content>
         <Content>
           <Form>
-		  <Text style={styles.pickMethod}>Pilih Metode Print</Text>
+		  <Text>Pilih Metode Print</Text>
 			<Item >
 			<Button  rounded light style={styles.buttons}>
             <Text style={{color:"#FFFFFF"}}>Inkjet</Text>
@@ -64,22 +55,17 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     textAlign: 'center',
-    backgroundColor: '#fea048'
+    backgroundColor: '#F4D03F'
 
   }, buttons: {
     margin: 10,
 	flexDirection: "row", 
 	justifyContent: "center",
-	 backgroundColor: '#fea048',
+	 backgroundColor: '#F4D03F',
 	width : 150
   }, error: {
       fontSize: 20,
       alignSelf: 'center',
       color: 'red'
-  }, method: {
-	  fontSize: 20
-  }, pickMethod: {
-	  fontSize: 20,
-	  alignSelf: 'center'
-  }
+  } 
 });
