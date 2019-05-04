@@ -15,61 +15,61 @@ export default class Loc extends Component {
   render() {
     return (
       <Container>
-        <Header style={styles.header}>
-			<Left>
-			  <Button transparent>
-				  <Icon name='arrow-back' />
-				</Button>
-			</Left>
-			  <Body>
-				<Title>PrintHub</Title>
-			  </Body>
-			  <Right>
-				<Button transparent>
-				  <Icon name='menu' />
-				</Button>
-			</Right>
-		</Header>
-		<Text style={styles.text}>Alamat Pengiriman</Text>
-		<Content>
-				<ListItem>
-					<Left>
+					<Header style={styles.header}>
+						<Left>
+							<Button transparent>
+								<Icon name='arrow-back' />
+							</Button>
+						</Left>
+						<Body>
+							<Title>PrintHub</Title>
+						</Body>
+						<Right>
+							<Button transparent>
+								<Icon name='menu' />
+							</Button>
+						</Right>
+					</Header>
+			<Text style={styles.text}>Alamat Pengiriman</Text>
+				<Content>
+					<ListItem>
+						<Left>
 						<Text>Alamat 1</Text>
-					</Left>
-					<Right>
-						<Radio onPress={() => this.setState({ itemSelected: 'itemOne' })}
-							selected={this.state.itemSelected == 'itemOne'}
-							/>
-					</Right>
-				</ListItem>
-				<ListItem>
-					<Left>
-						<Text>Alamat 2</Text>
-					</Left>
-					<Right>
-						<Radio onPress={() => this.setState({ itemSelected: 'itemTwo' })}
-						selected={this.state.itemSelected == 'itemTwo' }
-						/>
-					</Right>
-				</ListItem>
+						</Left>
+							<Right>
+								<Radio onPress={() => this.setState({ itemSelected: 'itemOne' })}
+									selected={this.state.itemSelected == 'itemOne'}
+									/>
+							</Right>
+					</ListItem>
+					<ListItem>
+						<Left>
+							<Text>Alamat 2</Text>
+						</Left>
+							<Right>
+								<Radio onPress={() => this.setState({ itemSelected: 'itemTwo' })}
+								selected={this.state.itemSelected == 'itemTwo' }
+								/>
+							</Right>
+					</ListItem>
         </Content>
-		<Content>
-				<Form>
-						<Button block style={styles.buttons}>
+				<Content>
+						<Form>
+							<Button block style={styles.buttons}>
 							<Text>Tambah Alamat Pengiriman</Text>
-						</Button>
-						<Button block 
-						style={
-							{width: 100, margin: 15,
-							flexDirection: "column", 
-							alignSelf: 'center',
-							justifyContent: "center", 
-							backgroundColor: '#fea048'}}
-						>
-							<Text>OK</Text>
-						</Button>
-				</Form>	
-		</Content>
+							</Button>
+								<Button block 
+								style={
+									{width: 100, margin: 15,
+									flexDirection: "column", 
+									alignSelf: 'center',
+									justifyContent: "center", 
+									backgroundColor: '#fea048'}}
+								>
+									<Text>OK</Text>
+								</Button>
+						</Form>	
+				</Content>
       </Container>
     );
   }

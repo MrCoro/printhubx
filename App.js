@@ -11,7 +11,7 @@ import { createStore } from 'redux';
 //import {Login} from './login';
 //Platform,  Container, Text
 
-export default class App extends Component {
+//export default class App extends Component {
   /*componentWillMount(){
     firebase.initializeApp({
     apiKey: 'AIzaSyACNfpCprNjrP1CdrKR4UJ7Gt9kqjkRgAI',

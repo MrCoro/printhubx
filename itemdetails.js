@@ -15,7 +15,7 @@ export default class ItemSpecs extends Component {
 
   
   
-  onValueChange(value: string) {
+  onValueChange(value) {
     this.setState({
       selected: value
     });
@@ -24,92 +24,92 @@ export default class ItemSpecs extends Component {
     return (
 	<Container>
 			<Header style={styles.header}>
-			<Left>
-				<Button transparent>
-				  <Icon name='arrow-back' />
-				</Button>
-			</Left>
-			  <Body>
-				<Title>PrintHub</Title>
-			  </Body>
-			<Right>
-				<Button transparent>
-				  <Icon name='menu' />
-				</Button>
-			</Right>
+				<Left>
+					<Button transparent>
+						<Icon name='arrow-back' />
+					</Button>
+				</Left>
+					<Body>
+						<Title>PrintHub</Title>
+					</Body>
+				<Right>
+					<Button transparent>
+						<Icon name='menu' />
+					</Button>
+				</Right>
 			</Header>
 			  <Text style={styles.text}> Spesifikasi </Text>
 		<Content>
 			  <Item >
-				<Left>
-					<Text>Berwarna/Hitam Putih</Text>
-				</Left>
-				<Right>
-					<Form>
-						<Picker
-							note
-							mode="dropdown"
-							style={styles.picker}
-							selectedValue={this.state.selected}
-							onValueChange={this.onValueChange.bind(this)}
-							>
-								<Picker.Item label="(Pilih)" value="key0" />
-								<Picker.Item label="Berwarna" value="key1" />
-								<Picker.Item label="Hitam Putih" value="key2" />
-						</Picker>
-					</Form>
-				</Right>
+					<Left>
+						<Text>Berwarna/Hitam Putih</Text>
+					</Left>
+					<Right>
+						<Form>
+							<Picker
+								note
+								mode="dropdown"
+								style={styles.picker}
+								selectedValue={this.state.selected}
+								onValueChange={this.onValueChange.bind(this)}
+								>
+									<Picker.Item label="(Pilih)" value="key0" />
+									<Picker.Item label="Berwarna" value="key1" />
+									<Picker.Item label="Hitam Putih" value="key2" />
+							</Picker>
+						</Form>
+					</Right>
 			  </Item>
 		</Content>
 		<Content>
 			  <Item >
-				<Left>
-					<Text>Jenis Kertas</Text>
-				</Left>
-				<Right>
-					<Form>
-						<Picker
-							note
-							mode="dropdown"
-							style={styles.picker}
-							selectedValue={this.state.selected}
-							onValueChange={this.onValueChange.bind(this)}
-							>
-								<Picker.Item label="(Pilih)" value="key0" />
-								<Picker.Item label="Kertas HVS" value="key1" />
-								<Picker.Item label="Kertas Foto" value="key2" />
-								<Picker.Item label="Art Carton" value="key3" />
-								<Picker.Item label="Art Paper" value="key4" />
-								<Picker.Item label="Brief Card" value="key5" />
-						</Picker>
-					</Form>
-				</Right>
+					<Left>
+						<Text>Jenis Kertas</Text>
+					</Left>
+					<Right>
+						<Form>
+							<Picker
+								note
+								mode="dropdown"
+								style={styles.picker}
+								selectedValue={this.state.selected}
+								onValueChange={this.onValueChange.bind(this)}
+								>
+									<Picker.Item label="(Pilih)" value="key0" />
+									<Picker.Item label="Kertas HVS" value="key1" />
+									<Picker.Item label="Kertas Foto" value="key2" />
+									<Picker.Item label="Art Carton" value="key3" />
+									<Picker.Item label="Art Paper" value="key4" />
+									<Picker.Item label="Brief Card" value="key5" />
+							</Picker>
+						</Form>
+					</Right>
 			  </Item>
 		</Content>
 		<Content>
 			  <Item >
-				<Left>
-					<Text>Ukuran Kertas</Text>
-				</Left>
-				<Right>
-					<Form>
-						<Picker
-							note
-							mode="dropdown"
-							style={styles.picker}
-							selectedValue={this.state.selected}
-							onValueChange={this.onValueChange.bind(this)}
-							>
-								<Picker.Item label="(Pilih)" value="key0" />
-								<Picker.Item label="A5" value="size0" />
-								<Picker.Item label="B5" value="size1" />
-								<Picker.Item label="A4" value="size2" />
-								<Picker.Item label="Q4(kwarto)" value="size3" />
-								<Picker.Item label="F4(folio)" value="size4" />
-								<Picker.Item label="A3" value="size5" />
-						</Picker>
-					</Form>
-				</Right>
+					<Left>
+						<Text>Ukuran Kertas</Text>
+					</Left>
+					<Right>
+						<Form>
+							<Picker
+								note
+								mode="dropdown"
+								style={styles.picker}
+								selectedValue={this.state.selected}
+								onValueChange={this.onValueChange.bind(this)}
+								>
+									<Picker.Item label="(Pilih)" value="key0" />
+									<Picker.Item label="A5" value="size0" />
+									<Picker.Item label="B5" value="size1" />
+									<Picker.Item label="A4" value="size2" />
+									<Picker.Item label="Q4(kwarto)" value="size3" />
+									<Picker.Item label="F4(folio)" value="size4" />
+									<Picker.Item label="A3" value="size5" />
+							</Picker>
+						</Form>
+					</Right>
 			  </Item>
 		</Content>
 		<Content>
@@ -127,7 +127,7 @@ export default class ItemSpecs extends Component {
 						</Button>
 				</Form>	
 		</Content>
-    </Container>
+  </Container>
     );
   }
 }
