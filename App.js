@@ -4,8 +4,11 @@ import firebase from 'firebase';
 import { Button, View, Container} from 'native-base';
 import FloatingLabel from './loginform.js';
 import { Spinner } from './components/spinner.js';
-import Router from './router';
+//import { Provider } from 'react-redux';
+//import { creteStore, createStore } from 'redux';
+//import { create } from 'domain';
 
+//import Router from './router';
 //import {Login} from './login';
 //Platform,  Container, Text
 
@@ -13,7 +16,6 @@ export default class App extends Component {
   state = {
     loggedIn: null
   };
-
 
   componentWillMount(){
     firebase.initializeApp({
@@ -23,7 +25,7 @@ export default class App extends Component {
     projectId: 'printhub-d86b6',
     storageBucket: 'printhub-d86b6.appspot.com',
     messagingSenderId: '393316642136'
-    });
+    });                                                                            
   
     firebase.auth().onAuthStateChanged((user) => {
         if(user){
@@ -47,7 +49,7 @@ export default class App extends Component {
         case false:
         return <FloatingLabel />;
       default:
-        return <View><Spinner /></View>;
+       return <View><Spinner /></View>;
     }     
   }
 
