@@ -41,14 +41,6 @@ export default class Signup extends Component {
 						<Label>Password</Label>
 						<Input />
 					</Item>
-					<Item floatingLabel> 
-						<Label>Alamat Tinggal</Label>
-						<Input />
-					</Item>
-					<Item floatingLabel last> 
-						<Label>No Telepon</Label>
-						<Input />
-					</Item>
 				</Form>
 			</Card>
         </Content>

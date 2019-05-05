@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, StyleSheet } from 'react-native';
 import { Container, Header, Content, Form, Text, Left, Right, Body, Title, Icon, Button} from "native-base";
+import { Actions } from 'react-native-router-flux';
 
 
 
@@ -11,7 +12,7 @@ export default class TotalPay extends Component {
   'Pesanan anda berhasil!',
   'Harap menunggu, kami sedang mengerjakannya!',
   [
-    {text: 'OK', onPress: () => console.log('OK Pressed')}
+    {text: 'OK', onPress: () => Actions.desc()}
   ],
   {cancelable: false},
 );

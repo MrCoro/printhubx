@@ -13,7 +13,6 @@ export default class FloatingLabel extends Component {
       loading: false
     }
 
-
   onButtonPress(){
     const { userEmail, userPassword } = this.state; 
 
@@ -98,6 +97,9 @@ export default class FloatingLabel extends Component {
     );
   }
 }
+
+//<img src="http/google.haha.jpg"/>
+
 
 const styles = StyleSheet.create({
   header: {

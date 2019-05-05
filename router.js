@@ -10,11 +10,11 @@ import TotalPay from './totalbiaya';
 const RouterComponent = () => {
     return(
         <Router>
-            <Scene key="desc" component={Desc} title="PrintHub" hideNavBar={true}/>
-            <Scene key="itemspecs" component={ItemSpecs} title="PrintHub" hideNavBar={true}/>
-            <Scene key="pickerex" component={PickerEx} title="PrintHub" hideNavBar={true}/>
-            <Scene key="contentexample" component={ContentExample} title="PrintHub" hideNavBar={true}/>
-            <Scene key="totalpay" component={TotalPay} title="PrintHub" hideNavBar={true}/>
+            <Scene key="desc" component={Desc} hideNavBar={true}/>
+            <Scene key="itemspecs" component={ItemSpecs} hideNavBar={true}/>
+            <Scene key="pickerex" component={PickerEx} hideNavBar={true}/>
+            <Scene key="contentexample" component={ContentExample} hideNavBar={true}/>
+            <Scene key="totalpay" component={TotalPay} hideNavBar={true}/>      
         </Router>
     );
 };

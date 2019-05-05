@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { Container, Header, Content, Form, Text, Left, Right, Body, Title, Icon, Button} from "native-base";
 import { Actions } from 'react-native-router-flux';
+import firebase from 'firebase';
 
 export default class Desc extends Component {
-  
   onValueChange(value) {
     this.setState({
       selected: value
@@ -39,8 +39,12 @@ export default class Desc extends Component {
 						<Button block style={styles.buttons} onPress={() => Actions.itemspecs()}>
 							<Text>Cetak Sekarang</Text>
 						</Button>
-					</Form>	
+						<Button  style={styles.buttons} onPress={() => {firebase.auth().signOut()}} > 
+        			<Text>LogOut</Text>
+        		</Button>
+					</Form>						
 				</Content>
+				
     	</Container>
     );
   }

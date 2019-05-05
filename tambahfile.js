@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 import { Container, Header, Content, Button,  Text, Left, Body, Right, Title } from 'native-base';
 //,View ,Footer
 import firebase from "firebase";
-import FileUploader from "react-firebase-file-uploader";
+//import FileUploader from "react-firebase-file-uploader";
 import { Actions } from 'react-native-router-flux';
 
 
