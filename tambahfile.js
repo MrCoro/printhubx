@@ -15,18 +15,7 @@ export default class ContentExample extends Component {
     progress: 0,
     avatarURL: ""
   };
-
-  componentWillMount(){
-    firebase.initializeApp({
-    apiKey: 'AIzaSyACNfpCprNjrP1CdrKR4UJ7Gt9kqjkRgAI',
-    authDomain: 'printhub-d86b6.firebaseapp.com',
-    databaseURL: 'https://printhub-d86b6.firebaseio.com',
-    projectId: 'printhub-d86b6',
-    storageBucket: 'printhub-d86b6.appspot.com',
-    messagingSenderId: '393316642136'
-    });                                                                            
-  }
-
+  
   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
   handleProgress = progress => this.setState({ progress });
   handleUploadError = error => {
@@ -48,11 +37,10 @@ export default class ContentExample extends Component {
           </Body>
           <Right />
         </Header>
-        <Content style={styles.contentPos}>
-          <FileUploader/>              
-              {/* <Button style={styles.addFile}>
+        <Content style={styles.contentPos}>              
+              <Button style={styles.addFile}>
                 <Text>Tambahkan File</Text>
-              </Button> */}
+              </Button>
         </Content>
         <Content style={styles.contentPos}>
           <Button style={styles.lanjut} onPress={() => Actions.totalpay()}>
