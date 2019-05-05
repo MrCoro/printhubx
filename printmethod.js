@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { Container, Header, Content, Form, Text, Left, Right, Body, Title, Icon, Button, Accordion, Item} from "native-base";
+import { Actions } from 'react-native-router-flux';
 
 const dataArray = [
   { title: "Inkjet Printing", content: "Printer berjenis inkjet ini adalah jenis printer yang menggunakan tinta untuk mencetak dan hasilnya pun dapat dibilang lumayan bagus." },
@@ -36,10 +37,10 @@ export default class PickerEx extends Component {
           <Form>
 		  <Text>Pilih Metode Print</Text>
 			<Item >
-			<Button  rounded light style={styles.buttons}>
+			<Button  rounded light style={styles.buttons} onPress={() => Actions.contentexample()}>
             <Text style={{color:"#FFFFFF"}}>Inkjet</Text>
           </Button>
-		  <Button  rounded light style={styles.buttons}>
+		  <Button  rounded light style={styles.buttons} onPress={() => Actions.contentexample()}>
             <Text style={{color:"#FFFFFF"}}>Laserjet</Text>
           </Button>
 		  </Item>

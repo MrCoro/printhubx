@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { Container, Header, Content, Text, Left, Right, Body, Title, Icon, Button, Item, Picker, Form, Card, CardItem, Label, Input} from "native-base";
+import { Actions } from 'react-native-router-flux';
 
 
 export default class ItemSpecs extends Component {
@@ -11,9 +12,6 @@ export default class ItemSpecs extends Component {
       selected: "key0"
     };
   }
-
-
-  
   
   onValueChange(value) {
     this.setState({
@@ -122,7 +120,7 @@ export default class ItemSpecs extends Component {
 		</Content>
 		<Content>
 				<Form>
-						<Button block style={styles.buttons}>
+						<Button block style={styles.buttons} onPress={() => Actions.pickerex()}>
 							<Text>Lanjut</Text>
 						</Button>
 				</Form>	

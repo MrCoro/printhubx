@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { Container, Header, Text, Form, Item, Input, Label, Button, Left, Body, Right, Title, Card, View } from 'native-base';
 import firebase from 'firebase';
-import { Spinner } from './components/spinner';
+import { Spinner } from './src/components/spinner';
 // unused component    
 
 export default class FloatingLabel extends Component {
-  constructor(props){
-    super(props)
-    this.state={
+    state={
       userEmail:'',
       userPassword:'',
       error: '',
       loading: false
     }
-  }
+
 
   onButtonPress(){
     const { userEmail, userPassword } = this.state; 

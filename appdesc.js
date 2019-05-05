@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { Container, Header, Content, Form, Text, Left, Right, Body, Title, Icon, Button} from "native-base";
-
-
+import { Actions } from 'react-native-router-flux';
 
 export default class Desc extends Component {
   
@@ -37,7 +36,7 @@ export default class Desc extends Component {
 				</Content>
 				<Content>
 					<Form>
-						<Button block style={styles.buttons}>
+						<Button block style={styles.buttons} onPress={() => Actions.itemspecs()}>
 							<Text>Cetak Sekarang</Text>
 						</Button>
 					</Form>	

@@ -7,13 +7,13 @@ import { CreateOrder } from '../components/createorder';
 const RouterComponent = () => {
     return (
         <Router sceneStyle={{ paddingTop: 65 }}>
-        <Scene key="auth">
-            <Scene key="login" component={LoginForm} title="Login Screen"/>
-        </Scene>
-        <Scene key="main">
-            <Scene key="pageList" onRight={() => Actions.createOrder()} rightTitle="Add" component={Listing} title="List Halaman" initial/>
-            <Scene key="createOrder" component={CreateOrder} title="Create Order"/>
-        </Scene>
+            <Scene key="auth">
+                <Scene key="login" component={LoginForm} title="Login Screen"/>
+            </Scene>
+            <Scene key="main">
+                <Scene key="pageList" onRight={() => Actions.createOrder()} rightTitle="Add" component={Listing} title="List Halaman" initial/>
+                <Scene key="createOrder" component={CreateOrder} title="Create Order"/>
+            </Scene>
         </Router>
     );
 };
