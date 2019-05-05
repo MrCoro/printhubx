@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
-import { Container, Header, Content, Form, Text, Left, Right, Body, Title, Icon, Button, Accordion, Item} from "native-base";
+import { Container, Header, Content, Form, Text, Left, Right, Body, Title, Icon, Button, Accordion, Item,ListItem,Radio} from "native-base";
 
 const dataArray = [
   { title: "Inkjet Printing", content: "Printer berjenis inkjet ini adalah jenis printer yang menggunakan tinta untuk mencetak dan hasilnya pun dapat dibilang lumayan bagus." },
@@ -8,6 +8,13 @@ const dataArray = [
 ];
 
 export default class PickerEx extends Component {
+
+	constructor() {
+  super();
+  this.state = {
+   itemSelected: 'methodOne',
+		}
+	}	
   
   onValueChange(value: string) {
     this.setState({
@@ -41,15 +48,34 @@ export default class PickerEx extends Component {
             contentStyle={{ backgroundColor: "#ffdbc5" }}
 		  />
         </Content>
+		<Content>
+				<Text style={styles.pickMethod}>Pilih Metode Print</Text>
+				<ListItem>
+					<Left>
+						<Text>Inkjet</Text>
+					</Left>
+					<Right>
+						<Radio onPress={() => this.setState({ itemSelected: 'methodOne' })}
+							selected={this.state.itemSelected == 'methodOne'}
+							/>
+					</Right>
+				</ListItem>
+				<ListItem>
+					<Left>
+						<Text>Laserjet</Text>
+					</Left>
+					<Right>
+						<Radio onPress={() => this.setState({ itemSelected: 'methodTwo' })}
+						selected={this.state.itemSelected == 'methodTwo' }
+						/>
+					</Right>
+				</ListItem>
+        </Content>
         <Content>
           <Form>
-		  <Text style={styles.pickMethod}>Pilih Metode Print</Text>
 			<Item >
 			<Button  rounded light style={styles.buttons}>
-            <Text style={{color:"#FFFFFF"}}>Inkjet</Text>
-          </Button>
-		  <Button  rounded light style={styles.buttons}>
-            <Text style={{color:"#FFFFFF"}}>Laserjet</Text>
+            <Text style={{color:"#FFFFFF"}}>Next</Text>
           </Button>
 		  </Item>
           </Form>
