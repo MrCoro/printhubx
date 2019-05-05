@@ -58,7 +58,14 @@ export default class Loc extends Component {
 						<Button block style={styles.buttons}>
 							<Text>Tambah Alamat Pengiriman</Text>
 						</Button>
-						<Button block style={styles.buttons}>
+						<Button block 
+						style={
+							{width: 100, margin: 15,
+							flexDirection: "column", 
+							alignSelf: 'center',
+							justifyContent: "center", 
+							backgroundColor: '#fea048'}}
+						>
 							<Text>OK</Text>
 						</Button>
 				</Form>	
@@ -72,18 +79,18 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     textAlign: 'center',
-    backgroundColor: '#F4D03F'
+    backgroundColor: '#fea048'
 
   }, text: {
     fontSize: 35,
     textAlign: 'center',
-    color: '#F4D03F'
+    color: '#fea048'
   }, buttons: {
-    margin: 10,
-	flexDirection: "row", 
+	margin: 18,
+	flexDirection: "column", 
+    alignSelf: 'center',
 	justifyContent: "center",
-	 backgroundColor: '#F4D03F',
-	width : 150
+	 backgroundColor: '#fea048'
   }, error: {
       fontSize: 20,
       alignSelf: 'center',
