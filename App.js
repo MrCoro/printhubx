@@ -1,18 +1,19 @@
-import React, {Component} from 'react';
-//import { StyleSheet, Text } from 'react-native';
-import firebase from 'firebase';
-import { View } from 'native-base';
-// Button, Container
-import FloatingLabel from './loginform.js';
-import { Spinner } from './src/components/spinner';
-import { Provider } from 'react-redux';
+import React, {Component} from 'react'; //
+import firebase from 'firebase'; //
+import { View } from 'native-base'; //
+import FloatingLabel from './loginform.js'; //
+import { Spinner } from './src/components/spinner'; //
+import RouterComponent from './router.js'; //
+import { Provider } from 'react-redux'; 
 import { createStore, applyMiddleware} from 'redux';
-import RouterComponent from './router.js';
 import reducers  from './src/reducer';
 import ReduxThunk from 'redux-thunk';
-
 //import { create } from 'domain';
 //Platform,  Container, Text
+//import { StyleSheet, Text } from 'react-native';
+// Button, Container
+
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
@@ -51,9 +52,10 @@ export default class App extends Component {
         <RouterComponent />
         );
           
-           //<Button onPress={() => {firebase.auth().signOut()}} > 
-			//<Text>LogOut</Text>
-          //</Button> 
+          //   <Button onPress={() => {firebase.auth().signOut()}} > 
+          //   <Text>LogOut</Text>
+          //   </Button> 
+
           case false:
         return <FloatingLabel />;
       default:
