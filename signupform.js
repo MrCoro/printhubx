@@ -2,15 +2,26 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { Container, Header, Content, Form, Text, Left, Right, Body, Title, Icon, Button, Card, Item, Label, Input} from "native-base";
 
+export default class SignUp extends Component {
+	state={
+		userEmail:'',
+		userPassword:'',
+		error: '',
+		loading: false
+	}
 
-
-export default class Signup extends Component {
-  
-  onValueChange(value: string) {
-    this.setState({
-      selected: value
-    });
-  }
+	onSignUpPress(){
+    const { userEmail, userPassword } = this.state;
+    this.setState({error: '', loading: true});
+    firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+        .then(this.onLoginSuccess.bind(this));
+	
+		this.setState({
+			userEmail: '',
+			userPassword: '',
+			});
+		}
+	
   render() {
     return (
       <Container>
@@ -35,22 +46,25 @@ export default class Signup extends Component {
 				<Form>
 					<Item floatingLabel>
 						<Label>Email</Label>
-						<Input />
+						<Input value={this.state.userEmail} onChangeText={userEmail => this.setState({ userEmail: userEmail})}/>
 					</Item>
 					<Item floatingLabel> 
 						<Label>Password</Label>
-						<Input />
+						<Input secureTextEntry={true} onChangeText={userPassword => this.setState({userPassword})}/>
 					</Item>
 				</Form>
 			</Card>
         </Content>
-		<Content>
-				<Form>
-						<Button block style={styles.buttons}>
-							<Text>Daftar</Text>
-						</Button>
-				</Form>	
-		</Content>
+				<Content>
+						<Form>
+								<Button block style={styles.buttons} onPress={() => {this.onSignUpPress.bind(this)}}>
+									<Text>Daftar</Text>
+								</Button>
+								<Button  block style={styles.buttons} onPress={() => {firebase.auth().signOut()}} > 
+        					<Text>Back</Text>
+        				</Button>
+						</Form>	
+				</Content>
       </Container>
     );
   }
