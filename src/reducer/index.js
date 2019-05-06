@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 import AuthReducer from './authreducer';
 import OrderForm from  './orderform';
-import OrderReducer from './orderreducer';
+import OrderReducer from './orderreducer'; 
+//import reducer from '../reducer';
 
-export default combineReducers({
+const reducers =  combineReducers({
     auth: AuthReducer,
     orderForm: OrderForm,  
     orders: OrderReducer
 });
+
+export default reducers;    
