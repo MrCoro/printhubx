@@ -1,15 +1,30 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text } from 'react-native';
+//import { StyleSheet, Text } from 'react-native';
 import firebase from 'firebase';
-import { Button, View, Container} from 'native-base';
+import { View } from 'native-base';
+// Button, Container
 import FloatingLabel from './loginform.js';
-import { Spinner } from './components/spinner.js';
+import { Spinner } from './src/components/spinner';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware} from 'redux';
+import RouterComponent from './router.js';
+import reducers  from './src/reducer';
+import ReduxThunk from 'redux-thunk';
 
-//import {Login} from './login';
+//import { create } from 'domain';
 //Platform,  Container, Text
 
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
 export default class App extends Component {
-  /*componentWillMount(){
+  constructor(props){
+    super(props)
+    this.state={
+      loggedIn: null
+    }
+  }
+
+  componentWillMount(){
     firebase.initializeApp({
     apiKey: 'AIzaSyACNfpCprNjrP1CdrKR4UJ7Gt9kqjkRgAI',
     authDomain: 'printhub-d86b6.firebaseapp.com',
@@ -17,8 +32,7 @@ export default class App extends Component {
     projectId: 'printhub-d86b6',
     storageBucket: 'printhub-d86b6.appspot.com',
     messagingSenderId: '393316642136'
-    });
-    
+    });                                                                            
   
     firebase.auth().onAuthStateChanged((user) => {
         if(user){
@@ -33,52 +47,44 @@ export default class App extends Component {
   renderContent(){
     switch (this.state.loggedIn){
       case true:
-        return( 
-          <Button onPress={() => {firebase.auth().signOut()}} > 
-          <Text>LogOut</Text>
-          </Button> 
+       return( 
+        <RouterComponent />
         );
-      
-        case false:
+          
+           //<Button onPress={() => {firebase.auth().signOut()}} > 
+			//<Text>LogOut</Text>
+          //</Button> 
+          case false:
         return <FloatingLabel />;
       default:
-        return <View><Spinner /></View>;
+       return <View><Spinner /></View>;
     }     
   }
 
   render() {
     return (  
-      <Container>
+      <Provider store={store}>
         {this.renderContent()}  
-      </Container>
+      </Provider>
     );
   }
 }
 
-//<FloatingLabel />   
-
-const styles = StyleSheet.create(
-  {
-  welcome: 
-    {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-// const instructions = Platform.select({
-//   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-//   android:
-//     'Double tap R on your keyboard to reload,\n' +
-//     'Shake or press menu button for dev menu',
+// const styles = StyleSheet.create(
+//   {
+//   welcome: 
+//     {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     margin: 10,
+//   },
+//   instructions: {
+//     textAlign: 'center',
+//     color: '#333333',
+//     marginBottom: 5,
+//   }, 
+//   loadingUser: {
+//     alignContent: 'center',
+//     paddingTop: 40
+//   }
 // });
-
-/* <View style={styles.container}>
-        <Text style={styles.welcome}>Print HUB</Text>
-      </View> */

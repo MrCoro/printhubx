@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { Container, Header, Content, Form, Text, Left, Right, Body, Title, Icon, Button, Accordion, Item,ListItem,Radio} from "native-base";
+import { Actions } from 'react-native-router-flux';
 
 const dataArray = [
   { title: "Inkjet Printing", content: "Printer berjenis inkjet ini adalah jenis printer yang menggunakan tinta untuk mencetak dan hasilnya pun dapat dibilang lumayan bagus." },
@@ -21,32 +22,24 @@ export default class PickerEx extends Component {
       selected: value
     });
   }
+
   render() {
     return (
       <Container>
         <Header style={styles.header}>
-			<Left>
-			  <Button transparent>
-				  <Icon name='arrow-back' />
-				</Button>
+          <Left>
+		  <Button transparent>
+              <Icon name='arrow-back' />
+            </Button>
 			</Left>
-			  <Body>
-				<Title>PrintHub</Title>
-			  </Body>
-			  <Right>
-				<Button transparent>
-				  <Icon name='menu' />
-				</Button>
-			</Right>
-		</Header>
-		<Text style={styles.method}>Metode Print:</Text>
-		<Content>
-          <Accordion 
-			dataArray={dataArray} 
-			expanded={0}
-			headerStyle={{ backgroundColor: "#fea048" }}
-            contentStyle={{ backgroundColor: "#ffdbc5" }}
-		  />
+          <Body>
+            <Title>PrintHub</Title>
+          </Body>
+          <Right />
+        </Header>
+		<Text>Metode Print:</Text>
+		<Content padder>
+          <Accordion dataArray={dataArray} expanded={0}/>
         </Content>
 		<Content>
 				<Text style={styles.pickMethod}>Pilih Metode Print</Text>
@@ -74,7 +67,7 @@ export default class PickerEx extends Component {
         <Content>
           <Form>
 			<Item >
-			<Button  rounded light style={styles.buttons}>
+			<Button light style={styles.buttons} onPress={() => Actions.contentexample()}>
             <Text style={{color:"#FFFFFF"}}>Next</Text>
           </Button>
 		  </Item>
@@ -90,22 +83,17 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     textAlign: 'center',
-    backgroundColor: '#fea048'
+    backgroundColor: '#F4D03F'
 
   }, buttons: {
     margin: 10,
 	flexDirection: "row", 
 	justifyContent: "center",
-	 backgroundColor: '#fea048',
+	 backgroundColor: '#F4D03F',
 	width : 150
   }, error: {
       fontSize: 20,
       alignSelf: 'center',
       color: 'red'
-  }, method: {
-	  fontSize: 20
-  }, pickMethod: {
-	  fontSize: 20,
-	  alignSelf: 'center'
-  }
+  } 
 });
