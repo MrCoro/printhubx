@@ -15,7 +15,6 @@ import ReduxThunk from 'redux-thunk';
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
-
 export default class App extends Component {
   constructor(props){
     super(props)
@@ -23,7 +22,6 @@ export default class App extends Component {
       loggedIn: null
     }
   }
-
   componentWillMount(){
     firebase.initializeApp({
     apiKey: 'AIzaSyACNfpCprNjrP1CdrKR4UJ7Gt9kqjkRgAI',
