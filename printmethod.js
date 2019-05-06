@@ -66,8 +66,8 @@ export default class PickerEx extends Component {
         </Content>
         <Content>
           <Form>
-			<Item >
-			<Button  rounded light style={styles.buttons} onPress={() => Actions.contentexample()}>
+			<Item>
+			<Button light style={styles.buttons} onPress={() => Actions.contentexample()}>
             <Text style={{color:"#FFFFFF"}}>Next</Text>
           </Button>
 		  </Item>

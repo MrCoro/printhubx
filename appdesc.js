@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 
 export default class Desc extends Component {
+
   onValueChange(value) {
     this.setState({
       selected: value
@@ -44,7 +45,6 @@ export default class Desc extends Component {
         		</Button>
 					</Form>						
 				</Content>
-				
     	</Container>
     );
   }

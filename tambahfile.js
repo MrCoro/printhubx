@@ -43,7 +43,7 @@ export default class ContentExample extends Component {
               </Button>
         </Content>
         <Content style={styles.contentPos}>
-          <Button style={styles.lanjut} onPress={() => Actions.totalpay()}>
+          <Button style={styles.lanjut} onPress={() => Actions.loc()}>
             <Text>Lanjut</Text>
           </Button>
         </Content>
@@ -57,18 +57,18 @@ const styles = StyleSheet.create({
   header:	{
 	fontSize: 20,
     textAlign: 'center',
-    backgroundColor: '#fea048'
+    backgroundColor: '#F4D03F'
 	},
 	contentPos:	{
 	bottom: -120
 	},
   addFile:	{
 	alignSelf:'center',
-	backgroundColor: '#fea048',
+	backgroundColor: '#F4D03F',
   }, 
   lanjut:	{
 	
 	alignSelf:'center',
-	backgroundColor: '#fea048',
+	backgroundColor: '#F4D03F',
   }
 });

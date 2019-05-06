@@ -15,6 +15,8 @@ import ReduxThunk from 'redux-thunk';
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
 export default class App extends Component {
   constructor(props){
     super(props)
@@ -22,6 +24,7 @@ export default class App extends Component {
       loggedIn: null
     }
   }
+
   componentWillMount(){
     firebase.initializeApp({
     apiKey: 'AIzaSyACNfpCprNjrP1CdrKR4UJ7Gt9kqjkRgAI',
@@ -52,6 +55,7 @@ export default class App extends Component {
           //   <Button onPress={() => {firebase.auth().signOut()}} > 
           //   <Text>LogOut</Text>
           //   </Button> 
+
           case false:
         return <FloatingLabel />;
       default:
@@ -62,7 +66,7 @@ export default class App extends Component {
   render() {
     return (  
       <Provider store={store}>
-        {this.renderContent()}   
+        {this.renderContent()}  
       </Provider>
     );
   }
